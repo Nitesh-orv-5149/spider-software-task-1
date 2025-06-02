@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammer Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🔨 Hammer Game</h1>
+    
+    <div class="game-mode">
+        <button class="mode-btn active" onclick="setMode('single')">Play Solo</button>
+        <button class="mode-btn" onclick="setMode('two')">Two Players</button>
+    </div>
+
+    <div class="players" id="players">
+        <div class="player-box active" id="p1">
+            <div class="player-name">Player 1</div>
+            <div class="player-score" id="p1score">0</div>
+        </div>
+        <div class="player-box" id="p2">
+            <div class="player-name">Player 2</div>
+            <div class="player-score" id="p2score">0</div>
+        </div>
+    </div>
+
+    <div class="game-area">
+        <div class="center-line"></div>
+        <div class="needle" id="needle"></div>
+    </div>
+
+    <div class="score" id="score">Ready?</div>
+    <div class="message" id="message">Hit the button when the needle is in the center!</div>
+
+    <button class="hit-button" id="hitBtn" onclick="hit()">HIT!</button>
+
+    <div class="instructions">
+        <h3>How to Play</h3>
+        <p>🎯 Stop the red needle as close to the green center line as possible</p>
+        <p>🏆 Perfect center = 100 points</p>
+        <p>⌨️ Use SPACEBAR or click the button</p>
+        <p>👥 Two player mode: take turns and see who wins!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

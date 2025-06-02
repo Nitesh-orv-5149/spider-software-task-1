@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #2c1810;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.game-area {
+    background: #1a1a1a;
+    border: 5px solid #8b4513;
+    border-radius: 20px 20px 0 0;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.center-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    height: 40px;
+    background: #00ff00;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.needle {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 2px;
+    height: 200px;
+    background: #ff4444;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+    border-radius: 2px;
+}
+
+.needle::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+}
+
+.score {
+    font-size: 3em;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 20px 0;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message {
+    font-size: 1.2em;
+    margin: 15px 0;
+    min-height: 30px;
+    color: #ffd700;
+}
+
+.hit-button {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 15px 30px;
+    background: #ff6b35;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.hit-button:hover {
+    background: #ff8c42;
+    transform: translateY(-2px);
+}
+
+.hit-button:active {
+    transform: translateY(0);
+}
+
+.hit-button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.game-mode {
+    margin: 20px 0;
+}
+
+.mode-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background: #4a90a4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.mode-btn.active {
+    background: #ffd700;
+    color: #333;
+}
+
+.players {
+    display: none;
+    margin: 20px 0;
+}
+
+.player-box {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    border: 2px solid #8b4513;
+    min-width: 120px;
+}
+
+.player-box.active {
+    border-color: #ffd700;
+}
+
+.player-name {
+    font-size: 1.1em;
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+.player-score {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+.instructions {
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 500px;
+}
+
+.instructions h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.instructions p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .game-area {
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .score {
+        font-size: 2em;
+    }
+}
